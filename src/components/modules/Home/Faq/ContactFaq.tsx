@@ -49,13 +49,13 @@ const ContactFaq = () => {
                             </h2>
                         </div>
 
-                        <Link
+                        {/* <Link
                             href="/faq"
                             className="inline-flex items-center gap-2 self-start rounded-full border border-violet-200 px-5 py-3 text-sm font-semibold text-violet-600"
                         >
                             View All FAQs
                             <ArrowRight className="size-4" />
-                        </Link>
+                        </Link> */}
                     </div>
 
                     <div className="mt-8 grid gap-4 lg:grid-cols-2">

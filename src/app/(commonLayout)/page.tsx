@@ -1,6 +1,7 @@
 
 
 import { ArrowRight, ArrowUpRight, BarChart3, Check, Grid2X2, ImageIcon, Menu, Monitor, Search, Target, X, Zap } from "lucide-react";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 
@@ -315,7 +316,7 @@ export default function HomePage() {
       transition-all duration-700 ease-out
       group-hover:-translate-y-3
       group-hover:translate-x-2
-      group-hover:rotate-[18deg]
+      group-hover:rotate-18
       group-hover:scale-110
     "
             >
@@ -489,6 +490,7 @@ export default function HomePage() {
               subtitle="Website Redesign & Donation Experience"
               tags={["Web Development", "UX/UI"]}
               variant="charity"
+              image="https://res.cloudinary.com/dhafh03o6/image/upload/v1788680022/nessa_ltpcui.png"
             />
 
             <WorkCard
@@ -496,6 +498,7 @@ export default function HomePage() {
               subtitle="Storefront & Conversion Experience"
               tags={["Web Development", "E-commerce"]}
               variant="store"
+              image="https://res.cloudinary.com/dhafh03o6/image/upload/v1788680021/E-commerce_mhp85x.png"
             />
 
             <WorkCard
@@ -503,6 +506,7 @@ export default function HomePage() {
               subtitle="5,000+ Images Optimized"
               tags={["Photo Editing", "E-commerce"]}
               variant="product"
+              image="https://res.cloudinary.com/dhafh03o6/image/upload/v1788686169/beforeafter_wiiqqw.png"
             />
           </div>
         </div>
@@ -668,75 +672,100 @@ export default function HomePage() {
   );
 }
 
+
 function WorkCard({
   title,
   subtitle,
   tags,
   variant,
+  image,
 }: {
   title: string;
   subtitle: string;
   tags: string[];
   variant: "charity" | "store" | "product";
+  image?: StaticImageData | string;
 }) {
   return (
     <article>
-      <div className="relative h-61.25 overflow-hidden rounded-[18px] bg-[#f2f0f7]">
-        {variant === "charity" && (
-          <div className="absolute inset-5 rotate-[-5deg] rounded-xl bg-white p-4 shadow-lg">
-            <div className="h-full rounded-lg bg-linear-to-br from-[#111225] via-[#ef8676] to-[#f5ddd9] p-5">
-              <p className="max-w-40 text-[20px] font-black text-white">
-                Together for a better tomorrow.
-              </p>
-            </div>
-          </div>
-        )}
+      <div className="relative h-56 overflow-hidden rounded-2xl bg-slate-100 sm:h-64">
+        {/* REAL IMAGE */}
+        {image ? (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-500 hover:scale-105"
+          />
+        ) : (
+          <>
+            {variant === "charity" && (
+              <div className="absolute inset-5 -rotate-6 rounded-xl bg-white p-4 shadow-lg">
+                <div className="h-full rounded-lg bg-linear-to-br from-[#111225] via-[#ef8676] to-[#f5ddd9] p-5">
+                  <p className="max-w-40 text-xl font-black text-white">
+                    Together for a better tomorrow.
+                  </p>
+                </div>
+              </div>
+            )}
 
-        {variant === "store" && (
-          <div className="absolute inset-5 rounded-xl bg-white p-4 shadow-lg">
-            <p className="text-[22px] font-black">Elevate</p>
-            <p className="text-[12px] text-[#757286]">Your Everyday</p>
+            {variant === "store" && (
+              <div className="absolute inset-5 rounded-xl bg-white p-4 shadow-lg">
+                <p className="text-2xl font-black">Elevate</p>
 
-            <div className="mt-5 grid grid-cols-3 gap-3">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
-                <div
-                  key={item}
-                  className="h-14 rounded-md bg-[#eeedf3]"
-                />
-              ))}
-            </div>
-          </div>
-        )}
+                <p className="text-xs text-slate-500">
+                  Your Everyday
+                </p>
 
-        {variant === "product" && (
-          <div className="absolute inset-0 grid grid-cols-2">
-            <div className="relative flex items-center justify-center bg-[#e7e3de]">
-              <span className="absolute left-3 top-3 rounded-md bg-white px-2 py-1 text-[9px]">
-                Before
-              </span>
-              <div className="h-28 w-16 rounded-[40%_40%_25%_25%] bg-[#a87563]" />
-            </div>
+                <div className="mt-5 grid grid-cols-3 gap-3">
+                  {[1, 2, 3, 4, 5, 6].map((item) => (
+                    <div
+                      key={item}
+                      className="h-14 rounded-md bg-slate-100"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
 
-            <div className="relative flex items-center justify-center bg-white">
-              <span className="absolute right-3 top-3 rounded-md bg-white px-2 py-1 text-[9px]">
-                After
-              </span>
-              <div className="h-28 w-16 rounded-[40%_40%_25%_25%] bg-[#b77459] shadow-xl" />
-            </div>
-          </div>
+            {variant === "product" && (
+              <div className="absolute inset-0 grid grid-cols-2">
+                <div className="relative flex items-center justify-center bg-[#e7e3de]">
+                  <span className="absolute left-3 top-3 rounded-md bg-white px-2 py-1 text-xs">
+                    Before
+                  </span>
+
+                  <div className="h-28 w-16 rounded-[40%_40%_25%_25%] bg-[#a87563]" />
+                </div>
+
+                <div className="relative flex items-center justify-center bg-white">
+                  <span className="absolute right-3 top-3 rounded-md bg-white px-2 py-1 text-xs">
+                    After
+                  </span>
+
+                  <div className="h-28 w-16 rounded-[40%_40%_25%_25%] bg-[#b77459] shadow-xl" />
+                </div>
+              </div>
+            )}
+          </>
         )}
       </div>
 
-      <div className="mt-4 flex justify-between">
+      <div className="mt-4 flex items-start justify-between gap-4">
         <div>
-          <h3 className="text-[16px] font-bold">{title}</h3>
-          <p className="mt-1 text-[11px] text-[#77758b]">{subtitle}</p>
+          <h3 className="text-base font-bold text-[#111140]">
+            {title}
+          </h3>
+
+          <p className="mt-1 text-sm text-slate-500">
+            {subtitle}
+          </p>
 
           <div className="mt-3 flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-[#f3f0ff] px-3 py-1 text-[9px] font-semibold text-[#7562f7]"
+                className="rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-600"
               >
                 {tag}
               </span>
@@ -744,7 +773,10 @@ function WorkCard({
           </div>
         </div>
 
-        <ArrowUpRight className="mt-8 text-[#ef7969]" size={17} />
+        <ArrowUpRight
+          className="mt-1 shrink-0 text-[#ef7969]"
+          size={18}
+        />
       </div>
     </article>
   );

@@ -18,6 +18,8 @@ import ServiceDevelopment from "../../../assets/Images/service/service-Developme
 import ServiceSeo from "../../../assets/Images/service/service-Seo.png";
 import ServiceFaq from "@/components/modules/Home/Faq/ServiceFaq";
 import ProjectCTA from "@/components/shared/ProjectCTA";
+import BeforeAfter from "@/components/modules/Home/BeforeAfter";
+import PreviewSlider from "@/components/modules/Home/Carousel/PreviewCarousel";
 
 
 const webServices = [
@@ -77,6 +79,45 @@ const process = [
         number: "06",
         title: "Grow",
         text: "Ongoing support and optimization.",
+    },
+];
+
+const comparisonItems = [
+    {
+        before:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685437/before1_nxryfo.png",
+        after:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685436/after1_zhfmcx.png",
+        preview:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685436/after1_zhfmcx.png",
+        title: "Background Removal",
+    },
+    {
+        before:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685436/before3_m20p7b.png",
+        after:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685436/after3_ibciwv.png",
+        preview:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685436/before3_m20p7b.png",
+        title: "Color Correction",
+    },
+    {
+        before:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685437/before2_fc3t99.png",
+        after:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685436/after2_ixweny.png",
+        preview:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685436/after2_ixweny.png",
+        title: "Shadow Creation",
+    },
+    {
+        before:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685435/before4_ozhzvr.png",
+        after:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685435/after4_gzdq3t.png",
+        preview:
+            "https://res.cloudinary.com/dhafh03o6/image/upload/v1788685435/after4_gzdq3t.png",
+        title: "Shadow Creation",
     },
 ];
 
@@ -271,50 +312,54 @@ export default function ServicesPage() {
 
             {/*PHOTO EDITING */}
 
-            <section className="bg-linear-to-br from-white to-slate-50 py-20 lg:py-24">
-                <div className="container mx-auto px-6 lg:px-8">
-                    <div className="grid items-center gap-14 lg:grid-cols-12">
-                        {/* content */}
-                        <div className="lg:col-span-5">
+            <section className="overflow-hidden bg-linear-to-br from-white to-slate-50 py-14 sm:py-16 lg:py-20 xl:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-14 xl:gap-16">
+                        {/* CONTENT */}
+                        <div className="min-w-0 lg:col-span-5">
                             <ServiceLabel
                                 number="03"
                                 title="Product Photo Editing"
                                 variant="coral"
                             />
 
-                            <h2 className="mt-5 text-4xl font-black leading-tight tracking-tight lg:text-5xl">
+                            <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight text-[#111140] sm:mt-5 sm:text-4xl lg:text-5xl">
                                 Product images
-                                <br />
-                                that sell.
+                                <br className="hidden sm:block" />
+                                <span className="sm:ml-0"> that sell.</span>
                             </h2>
 
-                            <p className="mt-5 max-w-xl leading-7 text-slate-600">
-                                Clean, consistent and professional product photos can make a
-                                huge difference in your online sales. We transform your raw
-                                product images into high-quality, e-commerce-ready visuals
-                                with attention to every detail.
+                            <p className="mt-4 max-w-xl text-sm leading-6 text-slate-600 sm:mt-5 sm:text-base sm:leading-7">
+                                Clean, consistent and professional product photos can make a huge
+                                difference in your online sales. We transform your raw product images
+                                into high-quality, e-commerce-ready visuals with attention to every
+                                detail.
                             </p>
 
-                            <ServiceChecklist items={photoServices} />
+                            <div className="mt-6 sm:mt-7">
+                                <ServiceChecklist items={photoServices} />
+                            </div>
 
                             <Link
                                 href="/contact"
-                                className="mt-8 inline-flex items-center gap-3 rounded-xl bg-violet-600 px-7 py-4 text-sm font-semibold text-white"
+                                className="
+            mt-7 inline-flex w-full items-center justify-center gap-3
+            rounded-xl bg-violet-600 px-5 py-3.5
+            text-sm font-semibold text-white
+            transition-all duration-300
+            hover:bg-violet-700
+            sm:mt-8 sm:w-auto sm:px-7 sm:py-4
+          "
                             >
                                 Discuss an Editing Project
-                                <ArrowRight className="size-4" />
+                                <ArrowRight className="size-4 shrink-0" />
                             </Link>
                         </div>
 
-                        {/* visual */}
-                        <div className="lg:col-span-7">
-                            <div className="relative aspect-video">
-                                <Image
-                                    src="/service-photo.png"
-                                    alt="Product photo editing before and after"
-                                    fill
-                                    className="object-contain"
-                                />
+                        {/* VISUAL */}
+                        <div className="min-w-0 lg:col-span-7">
+                            <div className="mx-auto w-full max-w-3xl lg:max-w-none">
+                                <PreviewSlider items={comparisonItems} />
                             </div>
                         </div>
                     </div>
