@@ -1,7 +1,7 @@
 "use client";
 
 
-import { Check, Clock3, Globe2, Mail, MapPin, MessageCircleMore } from "lucide-react";
+import { ArrowUpRight, Check, Clock3, Globe2, Mail, MapPin, MessageCircleMore } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
@@ -59,9 +59,86 @@ const ContactSection = () => {
 
                 <ContactItem
                   icon={MapPin}
-                  title="Location"
-                  value="148-28 88th Avenue, Apt# 6H, Queens, NY-11435"
-                  text="We work with clients globally."
+                  title="Our Locations"
+                  text="Operating across two regions, working with clients worldwide."
+                  value={
+                    <div className="relative overflow-hidden rounded-2xl border border-violet-100 bg-linear-to-br from-white via-violet-50/40 to-indigo-50/60 shadow-sm">
+                      {/* soft glow */}
+                      <div className="pointer-events-none absolute -right-10 -top-10 size-28 rounded-full bg-violet-200/40 blur-3xl" />
+
+                      {/* USA */}
+                      <div className="group relative flex items-start justify-between gap-4 p-5 transition-all duration-300 hover:bg-white/70">
+                        <div className="flex items-start gap-4">
+                          <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#111140] text-xs font-black tracking-wide text-white shadow-sm">
+                            US
+                          </div>
+
+                          <div>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <p className="text-sm font-black text-[#111140]">
+                                New York
+                              </p>
+
+                              <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-violet-600 shadow-sm">
+                                USA
+                              </span>
+                            </div>
+
+                            <p className="mt-2 text-sm leading-6 text-slate-500">
+                              148-28 88th Avenue, Apt. 6H
+                              <br />
+                              Queens, NY 11435
+                            </p>
+                          </div>
+                        </div>
+
+                        <ArrowUpRight className="mt-1 size-4 shrink-0 text-violet-400 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet-600" />
+                      </div>
+
+                      <div className="mx-5 border-t border-violet-100" />
+
+                      {/* Bangladesh */}
+                      <div className="group relative flex items-start justify-between gap-4 p-5 transition-all duration-300 hover:bg-white/70">
+                        <div className="flex items-start gap-4">
+                          <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-violet-600 text-xs font-black tracking-wide text-white shadow-sm">
+                            BD
+                          </div>
+
+                          <div>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <p className="text-sm font-black text-[#111140]">
+                                Gaibandha
+                              </p>
+
+                              <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-violet-600 shadow-sm">
+                                Bangladesh
+                              </span>
+                            </div>
+
+                            <p className="mt-2 text-sm leading-6 text-slate-500">
+                              Board Bazar
+                              <br />
+                              Gaibandha, Bangladesh
+                            </p>
+                          </div>
+                        </div>
+
+                        <ArrowUpRight className="mt-1 size-4 shrink-0 text-violet-400 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet-600" />
+                      </div>
+
+                      {/* bottom strip */}
+                      <div className="flex items-center justify-between border-t border-violet-100 bg-white/50 px-5 py-3">
+                        <span className="text-xs font-semibold text-slate-500">
+                          Remote Worldwide
+                        </span>
+
+                        <span className="flex items-center gap-2 text-xs font-bold text-violet-600">
+                          Global Presence
+                          <Globe2 className="size-3.5" />
+                        </span>
+                      </div>
+                    </div>
+                  }
                 />
 
                 <ContactItem
@@ -104,86 +181,6 @@ const ContactSection = () => {
 };
 
 
-function FormStep({
-  number,
-  title,
-  children,
-}: {
-  number: string;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="mt-8">
-      <div className="mb-5 flex items-center gap-4">
-        <span className="flex size-9 items-center justify-center rounded-full bg-violet-600 text-sm font-bold text-white">
-          {number}
-        </span>
-
-        <h3 className="font-bold">{title}</h3>
-      </div>
-
-      {children}
-    </div>
-  );
-}
-
-function ServiceChoice({
-  icon: Icon,
-  label,
-  selected,
-  onClick,
-}: {
-  icon: React.ElementType;
-  label: string;
-  selected: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`relative flex min-h-32 flex-col items-center justify-center gap-4 rounded-xl border p-5 text-center transition ${selected
-        ? "border-violet-500 bg-violet-50"
-        : "border-slate-200 bg-white hover:border-violet-300"
-        }`}
-    >
-      {selected && (
-        <span className="absolute right-2 top-2 flex size-5 items-center justify-center rounded-full bg-violet-600 text-white">
-          <Check className="size-3" strokeWidth={3} />
-        </span>
-      )}
-
-      <div className="flex size-11 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
-        <Icon className="size-6" />
-      </div>
-
-      <span className="text-sm font-bold leading-5">{label}</span>
-    </button>
-  );
-}
-
-function Field({
-  label,
-  required = false,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="block">
-      <span className="mb-2 block text-sm font-medium">
-        {label}
-        {required && <span className="ml-1 text-[#ff7669]">*</span>}
-      </span>
-
-      {children}
-    </label>
-  );
-}
-
 function ContactItem({
   icon: Icon,
   title,
@@ -192,8 +189,8 @@ function ContactItem({
 }: {
   icon: React.ElementType;
   title: string;
-  value: string;
-  text: string;
+  value: React.ReactNode;
+  text?: string;
 }) {
   return (
     <div className="flex gap-4">
@@ -201,10 +198,20 @@ function ContactItem({
         <Icon className="size-6" />
       </div>
 
-      <div>
-        <p className="text-sm font-bold">{title}</p>
-        <p className="mt-1 text-sm font-medium text-[#111140]">{value}</p>
-        <p className="mt-1 text-xs leading-5 text-slate-500">{text}</p>
+      <div className="min-w-0 flex-1">
+        <p className="text-sm font-bold text-[#111140]">
+          {title}
+        </p>
+
+        <div className="mt-1.5">
+          {value}
+        </div>
+
+        {text && (
+          <p className="mt-3 text-xs leading-5 text-slate-500">
+            {text}
+          </p>
+        )}
       </div>
     </div>
   );
