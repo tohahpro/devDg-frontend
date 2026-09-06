@@ -30,7 +30,7 @@ export default function AboutPage() {
     return (
         <main className="overflow-hidden bg-white text-[#111140]">
 
-            <section className="relative overflow-hidden bg-linear-to-br from-white via-white to-violet-50 pt-32 lg:pt-36">
+            <section className="py-20 relative overflow-hidden bg-linear-to-br from-white via-white to-violet-50 pt-32 lg:pt-36">
                 <div className="container mx-auto px-6 lg:px-8">
                     <div className="grid min-h-152 items-center gap-12 lg:grid-cols-12">
 
@@ -104,7 +104,7 @@ export default function AboutPage() {
                     <div className="grid overflow-hidden rounded-2xl border border-violet-100 bg-white shadow-xl shadow-violet-100/50 sm:grid-cols-2 lg:grid-cols-4">
                         <StatCard
                             icon={Users}
-                            value="20+"
+                            value="360+"
                             label="Projects Completed"
                         />
 

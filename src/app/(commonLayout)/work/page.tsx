@@ -19,7 +19,7 @@ const projects: IProject[] = [
         title: "Nessa Foundation",
         description:
             "A modern website to support their mission and improve user engagement.",
-        image: "/work-nessa.png",
+        image: "https://res.cloudinary.com/dhafh03o6/image/upload/v1788680254/nessa_ezmccw.png",
         categories: ["Web Development", "UX/UI"],
         features: [
             "Modern & clean design",
@@ -33,7 +33,7 @@ const projects: IProject[] = [
         title: "E-commerce Brand",
         description:
             "A high-performing online store with a focus on conversion and user experience.",
-        image: "/work-ecommerce.png",
+        image: "https://res.cloudinary.com/dhafh03o6/image/upload/v1788680307/e-commerce_u3non6.png",
         categories: ["E-commerce", "Web Development"],
         features: [
             "Custom ecommerce development",
@@ -47,7 +47,7 @@ const projects: IProject[] = [
         title: "Local Business (SEO)",
         description:
             "Improved search visibility for a local business through technical and on-page optimization.",
-        image: "/work-seo-local.png",
+        image: "https://res.cloudinary.com/dhafh03o6/image/upload/v1788680942/Local_SEO_tmy5au.png",
         categories: ["SEO", "Growth"],
         features: [
             "Technical SEO",
@@ -61,7 +61,7 @@ const projects: IProject[] = [
         title: "Product Imaging Project",
         description:
             "5,000+ product images edited for an ecommerce store with consistent quality and fast turnaround.",
-        image: "/work-product.png",
+        image: "https://res.cloudinary.com/dhafh03o6/image/upload/v1788680723/imaging_i4fumk.png",
         categories: ["Product Photo Editing", "E-commerce"],
         features: [
             "Background removal",
@@ -75,7 +75,7 @@ const projects: IProject[] = [
         title: "Corporate Website",
         description:
             "A professional website redesign for a growing company to better represent their brand and services.",
-        image: "/work-corporate.png",
+        image: "https://res.cloudinary.com/dhafh03o6/image/upload/v1788680601/corporate_a3vqxs.png",
         categories: ["Web Development", "Redesign"],
         features: [
             "Modern UI/UX",
@@ -89,7 +89,7 @@ const projects: IProject[] = [
         title: "E-commerce SEO Growth",
         description:
             "Increased organic traffic and product visibility for an online store through content and technical SEO.",
-        image: "/work-seo-growth.png",
+        image: "https://res.cloudinary.com/dhafh03o6/image/upload/v1788680942/SEO_Growth_dzrr8t.png",
         categories: ["SEO", "Content"],
         features: [
             "Keyword research",
