@@ -10,6 +10,8 @@ import ContactSection from "@/components/modules/Home/Contact/ContactSection";
 import ContactHero from "../../../assets/Images/contact/Contact-Hero.png";
 import ContactBg from "../../../assets/Images/contact/contact-bg.png";
 import ContactFaq from "@/components/modules/Home/Faq/ContactFaq";
+import ProjectCTA from "@/components/shared/ProjectCTA";
+import { SectionLabel } from "@/components/shared/SectionLabel";
 
 
 
@@ -38,7 +40,7 @@ export default function ContactPage() {
 
                         {/* LEFT CONTENT */}
                         <div className="relative z-10 pb-10 lg:col-span-5 lg:pb-14">
-                            <Eyebrow>Get In Touch</Eyebrow>
+                            <SectionLabel>Get In Touch</SectionLabel>
 
                             <h1 className="mt-4 text-5xl font-black leading-none tracking-tight text-[#111140] sm:text-6xl">
                                 Tell us what you&apos;re
@@ -86,51 +88,15 @@ export default function ContactPage() {
             <ContactFaq />
 
             {/* CTA */}
-            <section className="relative overflow-hidden bg-linear-to-r from-indigo-800 via-violet-600 to-indigo-900 text-white">
-                <div className="absolute -bottom-24 -right-12 size-72 rounded-full border-[3rem] border-[#ff7c70]/80" />
-
-                <div className="container relative mx-auto flex flex-col justify-between gap-10 px-6 py-16 lg:flex-row lg:items-center lg:px-8">
-                    <div>
-                        <p className="text-sm font-bold uppercase tracking-widest text-white/80">
-                            Ready to move forward?
-                        </p>
-
-                        <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
-                            Let&apos;s build something great together.
-                        </h2>
-
-                        <p className="mt-4 max-w-2xl text-base leading-7 text-white/85">
-                            Every successful project starts with a simple conversation. Tell
-                            us what you need, and we&apos;ll help you find the right solution.
-                        </p>
-                    </div>
-
-                    <Link
-                        href="/contact"
-                        className="relative z-10 inline-flex items-center justify-center gap-3 self-start rounded-xl bg-white px-8 py-4 text-sm font-bold text-violet-600 shadow-xl lg:self-center"
-                    >
-                        Start a Project
-                        <ArrowRight className="size-4" />
-                    </Link>
-                </div>
-            </section>
+            <ProjectCTA
+                eyebrow="Ready to move forward?"
+                title="Let's build something great together."
+                description="Every successful project starts with a simple conversation. Tell us what you need, and we'll help you find the right solution."
+            />
         </main>
     );
 }
 
-function Eyebrow({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
-    return (
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-violet-600">
-            <span className="flex size-4 items-center justify-center rounded border border-violet-500">
-                <ChevronUp className="size-2.5" />
-            </span>
-            {children}
-        </div>
-    );
-}
+
 
 

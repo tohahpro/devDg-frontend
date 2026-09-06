@@ -3,10 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 // @ts-ignore - allow side-effect css import without type declarations
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { PreLoader } from "@/components/shared/PreLoader";
-import { InteractiveDotGrid } from "@/components/shared/Interactive-Dot-Grid";
 import { ScrollToTop } from "@/components/shared/scroll-to-top";
-import { ThemeProvider } from "@/components/shared/theme-provider";
 import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -47,9 +44,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <>
-          {/* <PreLoader /> */}
-          {/* <InteractiveDotGrid /> */}
-          <ThemeProvider>{children}</ThemeProvider>
+          {children}
           <Toaster richColors position="bottom-center" />
           <ScrollToTop />
         </>

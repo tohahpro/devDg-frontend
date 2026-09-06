@@ -17,6 +17,7 @@ import ServiceHero from "../../../assets/Images/service/service-Hero.png";
 import ServiceDevelopment from "../../../assets/Images/service/service-Development.png";
 import ServiceSeo from "../../../assets/Images/service/service-Seo.png";
 import ServiceFaq from "@/components/modules/Home/Faq/ServiceFaq";
+import ProjectCTA from "@/components/shared/ProjectCTA";
 
 
 const webServices = [
@@ -363,34 +364,11 @@ export default function ServicesPage() {
 
             {/* CTA */}
 
-            <section className="relative overflow-hidden bg-linear-to-r from-violet-600 via-indigo-600 to-indigo-900 text-white">
-                <div className="absolute -bottom-24 -right-12 size-72 rounded-full border-[3rem] border-[#ff7c70]/80" />
-
-                <div className="container relative mx-auto flex flex-col justify-between gap-10 px-6 py-16 lg:flex-row lg:items-center lg:px-8">
-                    <div>
-                        <p className="text-sm font-bold uppercase tracking-widest text-white/80">
-                            Ready to get started?
-                        </p>
-
-                        <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
-                            Let&apos;s work on your next project.
-                        </h2>
-
-                        <p className="mt-4 text-lg text-white/80">
-                            Tell us what you need, and we&apos;ll help you find the right
-                            solution.
-                        </p>
-                    </div>
-
-                    <Link
-                        href="/contact"
-                        className="relative z-10 inline-flex items-center justify-center gap-3 self-start rounded-xl bg-white px-8 py-4 text-sm font-bold text-violet-600 shadow-xl lg:self-center"
-                    >
-                        Start a Project
-                        <ArrowRight className="size-4" />
-                    </Link>
-                </div>
-            </section>
+            <ProjectCTA
+                eyebrow="Ready to get started?"
+                title="Let's work on your next project."
+                description="Tell us what you need, and we'll help you find the right solution."
+            />
 
             {/* Faq  */}
             <ServiceFaq />

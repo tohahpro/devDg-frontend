@@ -22,6 +22,8 @@ import {
 import AboutHero from "../../../assets/Images/about/about-Hero.png";
 import AboutWeAre from "../../../assets/Images/about/about-We_are.png";
 import AboutTeam from "../../../assets/Images/about/about-Team.png";
+import ProjectCTA from "@/components/shared/ProjectCTA";
+import { SectionLabel } from "@/components/shared/SectionLabel";
 
 export default function AboutPage() {
 
@@ -160,7 +162,7 @@ export default function AboutPage() {
 
                         {/* content */}
                         <div className="lg:col-span-5 lg:pl-2">
-                            <Eyebrow>Who We Are</Eyebrow>
+                            <SectionLabel>Who We Are</SectionLabel>
 
                             <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight lg:text-5xl">
                                 A focused digital agency
@@ -229,7 +231,7 @@ export default function AboutPage() {
 
                         {/* Heading */}
                         <div className="lg:col-span-3">
-                            <Eyebrow>Our Values</Eyebrow>
+                            <SectionLabel>Our Values</SectionLabel>
 
                             <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#111140]">
                                 What guides
@@ -276,7 +278,7 @@ export default function AboutPage() {
                 <div className="grid items-center gap-12 px-6 lg:grid-cols-12 lg:px-8">
                     {/* how we think */}
                     <div className="lg:col-span-4">
-                        <Eyebrow>How We Think</Eyebrow>
+                        <SectionLabel>How We Think</SectionLabel>
 
                         <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight">
                             We start with
@@ -326,7 +328,7 @@ export default function AboutPage() {
 
                     {/* mission */}
                     <div className="lg:col-span-4">
-                        <Eyebrow>Our Mission</Eyebrow>
+                        <SectionLabel>Our Mission</SectionLabel>
 
                         <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight">
                             To help businesses
@@ -360,34 +362,11 @@ export default function AboutPage() {
 
             {/* CTA */}
 
-            <section className="relative py-20 overflow-hidden bg-linear-to-r from-violet-600 via-indigo-600 to-indigo-900 text-white">
-                <div className="absolute -bottom-20 -right-10 size-72 rounded-full border-[3rem] border-[#ff7c70]/80" />
-
-                <div className="relative container mx-auto flex flex-col justify-between gap-10 px-6 py-16 lg:flex-row lg:items-center lg:px-8">
-                    <div>
-                        <p className="text-sm font-bold uppercase tracking-widest text-white/80">
-                            Ready to move forward?
-                        </p>
-
-                        <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
-                            Let&apos;s build something meaningful.
-                        </h2>
-
-                        <p className="mt-4 text-base text-white/85 sm:text-lg">
-                            Tell us about your project and we&apos;ll help you find the right
-                            next step.
-                        </p>
-                    </div>
-
-                    <Link
-                        href="/contact"
-                        className="relative z-10 inline-flex items-center justify-center gap-3 self-start rounded-xl bg-white px-8 py-4 text-sm font-bold text-violet-600 shadow-xl lg:self-center"
-                    >
-                        Start a Project
-                        <ArrowRight className="size-4" />
-                    </Link>
-                </div>
-            </section>
+            <ProjectCTA
+                eyebrow="Ready to move forward?"
+                title="Let's build something meaningful."
+                description="Tell us about your project and we'll help you find the right next step."
+            />
 
         </main>
     );
@@ -397,17 +376,6 @@ export default function AboutPage() {
    COMPONENTS
 ========================================================== */
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-    return (
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-violet-600">
-            <span className="flex size-4 items-center justify-center rounded border border-violet-500">
-                <ChevronUp className="size-2.5" />
-            </span>
-
-            {children}
-        </div>
-    );
-}
 
 function StatCard({
     icon: Icon,
@@ -515,47 +483,6 @@ function MissionPoint({ text }: { text: string }) {
             </span>
 
             <p className="text-slate-600">{text}</p>
-        </div>
-    );
-}
-
-function SocialIcon({
-    icon: Icon,
-}: {
-    icon: React.ElementType;
-}) {
-    return (
-        <Link
-            href="#"
-            className="flex size-8 items-center justify-center rounded-full bg-[#111140] text-white transition hover:bg-violet-600"
-        >
-            <Icon className="size-4" />
-        </Link>
-    );
-}
-
-function FooterColumn({
-    title,
-    links,
-}: {
-    title: string;
-    links: string[];
-}) {
-    return (
-        <div>
-            <h3 className="font-bold">{title}</h3>
-
-            <div className="mt-5 flex flex-col gap-4 text-sm text-slate-600">
-                {links.map((link) => (
-                    <Link
-                        key={link}
-                        href="#"
-                        className="transition hover:text-violet-600"
-                    >
-                        {link}
-                    </Link>
-                ))}
-            </div>
         </div>
     );
 }

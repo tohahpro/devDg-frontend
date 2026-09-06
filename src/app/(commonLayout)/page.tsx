@@ -1,10 +1,9 @@
-"use client";
+
 
 import { ArrowRight, ArrowUpRight, BarChart3, Check, Grid2X2, ImageIcon, Menu, Monitor, Search, Target, X, Zap } from "lucide-react";
 import Link from "next/link";
 
-import { useState } from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+
 
 const services = [
   {
@@ -94,16 +93,15 @@ const process = [
 ];
 
 export default function HomePage() {
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <main className="overflow-hidden bg-white text-[#17163d]">
 
       {/* Hero */}
-      <section className="relative min-h-190 overflow-hidden bg-[radial-gradient(circle_at_72%_30%,rgba(123,96,255,.16),transparent_32%),radial-gradient(circle_at_95%_18%,rgba(236,117,105,.09),transparent_22%),linear-gradient(180deg,#fff,#fbfaff)] pt-38.75">
+      <section className="relative min-h-190 overflow-hidden bg-[radial-linear(circle_at_72%_30%,rgba(123,96,255,.16),transparent_32%),radial-linear(circle_at_95%_18%,rgba(236,117,105,.09),transparent_22%),linear-linear(180deg,#fff,#fbfaff)] pt-38.75">
         <div className="absolute -right-32.5 top-25 h-130 w-162.5 rounded-[48%] bg-[#ede9ff] opacity-80 blur-[1px]" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-[.92fr_1.08fr] lg:px-8">
+        <div className="relative mx-auto grid container items-center gap-12 px-5 lg:grid-cols-[.92fr_1.08fr] lg:px-8">
           <div>
             <p className="mb-5 text-[12px] font-extrabold uppercase tracking-[.16em] text-[#6d5af6]">
               ✦ Digital growth, built with depth.
@@ -122,7 +120,7 @@ export default function HomePage() {
 
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
-                href="#contact"
+                href="/contact"
                 className="flex items-center gap-2 rounded-xl bg-[#6655f6] px-6 py-3.5 text-[13px] font-semibold text-white shadow-lg shadow-[#6655f6]/20"
               >
                 Start a Project
@@ -130,7 +128,7 @@ export default function HomePage() {
               </Link>
 
               <Link
-                href="#work"
+                href="/work"
                 className="rounded-xl border border-[#e5e3ed] bg-white px-6 py-3.5 text-[13px] font-semibold text-[#24234e]"
               >
                 View Our Work
@@ -154,8 +152,8 @@ export default function HomePage() {
           </div>
 
           {/* Hero visual */}
-          <div className="relative mx-auto h-[500px] w-full max-w-[660px]">
-            <div className="absolute left-[11%] top-[80px] h-[330px] w-[440px] rotate-[-2deg] rounded-[20px] border border-white/60 bg-white p-5 shadow-[0_30px_60px_rgba(63,51,140,.16)]">
+          <div className="relative mx-auto h-125 w-full max-w-165">
+            <div className="absolute left-[11%] top-20 h-82.5 w-110 -rotate-2 rounded-[20px] border border-white/60 bg-white p-5 shadow-[0_30px_60px_rgba(63,51,140,.16)]">
               <div className="mb-6 flex gap-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ff756f]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ffcf55]" />
@@ -183,10 +181,10 @@ export default function HomePage() {
                 <div className="rounded-xl bg-[#f5f4fb]" />
               </div>
 
-              <div className="mt-8 h-[75px] rounded-xl bg-gradient-to-r from-[#f5f3fb] to-[#ece9ff]" />
+              <div className="mt-8 h-18.75 rounded-xl bg-linear-to-r from-[#f5f3fb] to-[#ece9ff]" />
             </div>
 
-            <div className="absolute right-[5%] top-[70px] z-20 rounded-2xl bg-white px-5 py-4 shadow-[0_20px_45px_rgba(47,37,100,.16)]">
+            <div className="absolute right-[5%] top-17.5 z-20 rounded-2xl bg-white px-5 py-4 shadow-[0_20px_45px_rgba(47,37,100,.16)]">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow">
                   <span className="text-lg font-black text-[#4285f4]">G</span>
@@ -200,12 +198,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="absolute bottom-[65px] left-[1%] z-30 flex items-end gap-3 rounded-2xl bg-white px-5 py-4 shadow-[0_20px_50px_rgba(56,48,112,.16)]">
-              <div className="flex h-12 items-end gap-[4px]">
+            <div className="absolute bottom-16.25 left-[1%] z-30 flex items-end gap-3 rounded-2xl bg-white px-5 py-4 shadow-[0_20px_50px_rgba(56,48,112,.16)]">
+              <div className="flex h-12 items-end gap-1">
                 {[18, 27, 35, 45, 58].map((h) => (
                   <span
                     key={h}
-                    className="w-[7px] rounded-sm bg-[#735eff]"
+                    className="w-1.75 rounded-sm bg-[#735eff]"
                     style={{ height: h }}
                   />
                 ))}
@@ -220,24 +218,24 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="absolute bottom-[10px] right-[14%] z-40 h-[280px] w-[145px] rotate-[4deg] rounded-[30px] border-[6px] border-[#111827] bg-white p-2 shadow-[0_25px_50px_rgba(33,29,74,.22)]">
+            <div className="absolute bottom-2.5 right-[14%] z-40 h-70 w-36.25 rotate-[4deg] rounded-[30px] border-[6px] border-[#111827] bg-white p-2 shadow-[0_25px_50px_rgba(33,29,74,.22)]">
               <div className="mx-auto mb-2 h-3 w-14 rounded-full bg-[#101217]" />
 
               <div className="rounded-[20px] bg-[#f8f7fb] p-3">
                 <p className="text-[6px] font-semibold text-[#88869a]">
                   Summer Collection
                 </p>
-                <div className="mt-3 h-[120px] rounded-xl bg-gradient-to-b from-[#dedbf5] to-[#aaa3d3]" />
+                <div className="mt-3 h-30 rounded-xl bg-linear-to-b from-[#dedbf5] to-[#aaa3d3]" />
                 <p className="mt-3 text-[8px] font-bold">Performance Shoe</p>
                 <p className="text-[7px] text-[#7b7990]">$129.00</p>
               </div>
             </div>
 
-            <div className="absolute right-[-3%] top-[150px] rotate-[12deg] text-[#ef7969]">
+            <div className="absolute right-[-3%] top-37.5 rotate-12 text-[#ef7969]">
               <ArrowUpRight size={110} strokeWidth={5} />
             </div>
 
-            <p className="absolute right-[0%] top-[300px] rotate-[-9deg] text-[25px] font-semibold italic text-[#443d8e]">
+            <p className="absolute right-[0%] top-75 rotate-[-9deg] text-[25px] font-semibold italic text-[#443d8e]">
               Growth
               <br />
               Starts Here
@@ -248,7 +246,7 @@ export default function HomePage() {
 
       {/* Brands */}
       <section className="border-b border-[#eeeeF4] py-10">
-        <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
+        <div className="mx-auto container px-5 lg:px-8">
           <p className="mb-7 text-center text-[9px] font-bold uppercase tracking-[.12em] text-[#9a98ae]">
             Trusted by businesses building what&apos;s next.
           </p>
@@ -265,23 +263,22 @@ export default function HomePage() {
 
       {/* What we do */}
       <section
-        id="services"
-        className="bg-[linear-gradient(180deg,#fff,#fbfaff)] py-24"
+        className="bg-[linear-linear(180deg,#fff,#fbfaff)] py-24"
       >
-        <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
+        <div className="mx-auto container px-5 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1fr_300px] lg:items-end">
             <div>
               <p className="mb-4 text-[11px] font-extrabold uppercase tracking-[.15em] text-[#6d5af6]">
                 ✦ What we do
               </p>
 
-              <h2 className="max-w-[750px] text-[42px] font-black leading-[1.02] tracking-[-2px] text-[#1c1c46] md:text-[54px]">
+              <h2 className="max-w-187.5 text-[42px] font-black leading-[1.02] tracking-[-2px] text-[#1c1c46] md:text-[54px]">
                 Three capabilities.
                 <br />
                 One growth-focused partner.
               </h2>
 
-              <p className="mt-5 max-w-[640px] text-[16px] leading-7 text-[#747188]">
+              <p className="mt-5 max-w-160 text-[16px] leading-7 text-[#747188]">
                 A great website should do more than look good. It should
                 perform, get discovered and communicate your brand clearly.
               </p>
@@ -308,7 +305,7 @@ export default function HomePage() {
                 <article
                   key={service.title}
                   className={`rounded-[18px] border p-8 ${service.dark
-                    ? "border-[#343080] bg-gradient-to-br from-[#373382] to-[#262362] text-white shadow-[0_25px_60px_rgba(38,35,98,.2)]"
+                    ? "border-[#343080] bg-linear-to-br from-[#373382] to-[#262362] text-white shadow-[0_25px_60px_rgba(38,35,98,.2)]"
                     : "border-[#eeedf4] bg-white text-[#22214a] shadow-[0_15px_45px_rgba(34,31,75,.05)]"
                     }`}
                 >
@@ -344,14 +341,14 @@ export default function HomePage() {
                     ))}
                   </ul>
 
-                  <Link
-                    href="#"
+                  {/* <Link
+                    href=""
                     className={`mt-7 flex items-center gap-2 text-[13px] font-bold ${service.dark ? "text-white" : "text-[#6d5af6]"
                       }`}
                   >
                     {service.link}
                     <ArrowRight size={14} />
-                  </Link>
+                  </Link> */}
                 </article>
               );
             })}
@@ -361,7 +358,7 @@ export default function HomePage() {
 
       {/* Work */}
       <section id="work" className="py-24">
-        <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
+        <div className="mx-auto container px-5 lg:px-8">
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[.15em] text-[#6e6b85]">
@@ -410,10 +407,9 @@ export default function HomePage() {
 
       {/* Why Depth Digi */}
       <section
-        id="about"
         className="bg-[#151528] py-20 text-white"
       >
-        <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
+        <div className="mx-auto container px-5 lg:px-8">
           <div className="mb-8 flex justify-between">
             <h2 className="text-[34px] font-bold">Why Depth Digi</h2>
             <p className="hidden text-[13px] text-[#a9a7bb] md:block">
@@ -448,7 +444,7 @@ export default function HomePage() {
 
       {/* How we work */}
       <section className="py-24">
-        <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
+        <div className="mx-auto container px-5 lg:px-8">
           <div className="flex flex-col justify-between gap-5 md:flex-row">
             <div>
               <p className="text-[14px] text-[#66647b]">How We Work</p>
@@ -457,7 +453,7 @@ export default function HomePage() {
               </h2>
             </div>
 
-            <p className="max-w-[350px] text-[13px] leading-6 text-[#747188]">
+            <p className="max-w-87.5 text-[13px] leading-6 text-[#747188]">
               A clear process, thoughtful execution,
               <br />
               and a focus on long-term results.
@@ -480,7 +476,7 @@ export default function HomePage() {
                 {index < process.length - 1 && (
                   <ArrowRight
                     size={16}
-                    className="absolute -right-5 top-[8px] hidden text-[#555273] lg:block"
+                    className="absolute -right-5 top-2 hidden text-[#555273] lg:block"
                   />
                 )}
               </div>
@@ -491,7 +487,7 @@ export default function HomePage() {
 
       {/* Testimonials */}
       <section className="pb-24">
-        <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
+        <div className="mx-auto container px-5 lg:px-8">
           <div className="mb-8 flex justify-between">
             <h2 className="text-[35px] font-black tracking-[-1px]">
               What Our Clients Say
@@ -524,17 +520,16 @@ export default function HomePage() {
 
       {/* CTA */}
       <section
-        id="contact"
-        className="relative overflow-hidden bg-gradient-to-r from-[#5445ec] via-[#684cf3] to-[#513be4] py-16 text-white"
+        className="relative overflow-hidden bg-linear-to-r from-[#5445ec] via-[#684cf3] to-[#513be4] py-16 text-white"
       >
-        <div className="absolute right-[-20px] top-[-30px] h-[210px] w-[210px] rounded-full border-[35px] border-[#e57983]/80" />
+        <div className="absolute -right-5 -top-7.5 h-52.5 w-52.5 rounded-full border-35 border-[#e57983]/80" />
 
-        <div className="mx-auto grid max-w-[1280px] gap-8 px-5 md:grid-cols-[1fr_.9fr] md:items-center lg:px-8">
+        <div className="mx-auto grid container gap-8 px-5 md:grid-cols-[1fr_.9fr] md:items-center lg:px-8">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[.15em]">
               Have a project in mind?
             </p>
-            <h2 className="mt-3 max-w-[640px] text-[42px] font-black leading-[1.02] tracking-[-2px] md:text-[55px]">
+            <h2 className="mt-3 max-w-160 text-[42px] font-black leading-[1.02] tracking-[-2px] md:text-[55px]">
               Let&apos;s build something
               <br />
               worth growing.
@@ -542,14 +537,14 @@ export default function HomePage() {
           </div>
 
           <div className="relative z-10">
-            <p className="max-w-[390px] text-[14px] leading-6 text-white/80">
+            <p className="max-w-97.5 text-[14px] leading-6 text-white/80">
               Tell us where you are now and where you want to go.
               We&apos;ll help you find the right next step.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-5">
               <Link
-                href="#"
+                href="/contact"
                 className="flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-[12px] font-bold text-[#5547e9]"
               >
                 Start a Project
@@ -566,83 +561,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-white pt-14">
-        <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
-          <div className="grid gap-10 border-b border-[#ecebf2] pb-12 md:grid-cols-4">
-            <div>
-              <Link
-                href="/"
-                className="text-[22px] font-black tracking-[-1px]"
-              >
-                <span className="text-[#6656f6]">DEPTH</span>
-                <span className="text-[#353273]">DIGI</span>
-              </Link>
-
-              <p className="mt-4 max-w-[220px] text-[12px] leading-5 text-[#747188]">
-                Web, search and creative
-                <br />
-                built to move businesses forward.
-              </p>
-
-              <div className="mt-6 flex gap-4">
-                <FaLinkedin size={16} />
-                <FaFacebook size={16} />
-                <FaInstagram size={16} />
-                <FaYoutube size={16} />
-              </div>
-            </div>
-
-            <div>
-              <p className="mb-4 text-[12px] font-bold">Services</p>
-              <div className="space-y-3 text-[12px] text-[#77758b]">
-                <p>Web Development</p>
-                <p>SEO</p>
-                <p>Product Photo Editing</p>
-              </div>
-            </div>
-
-            <div>
-              <p className="mb-4 text-[12px] font-bold">Company</p>
-              <div className="space-y-3 text-[12px] text-[#77758b]">
-                <p>Work</p>
-                <p>About</p>
-                <p>Contact</p>
-              </div>
-            </div>
-
-            <div>
-              <p className="mb-3 text-[12px] font-bold">Get updates</p>
-              <p className="text-[11px] leading-5 text-[#77758b]">
-                Subscribe to our newsletter for insights
-                on web, search and visual content.
-              </p>
-
-              <div className="mt-5 flex rounded-xl border border-[#e7e5ef] p-1">
-                <input
-                  placeholder="Your email address"
-                  className="min-w-0 flex-1 bg-transparent px-3 text-[11px] outline-none"
-                />
-                <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#6655f6] text-white">
-                  <ArrowRight size={15} />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-between gap-4 py-7 text-[10px] text-[#8e8b9e] sm:flex-row">
-            <p>© 2026 Depth Digi. All rights reserved.</p>
-
-            <div className="flex gap-7">
-              <p>Privacy Policy</p>
-              <p>Terms & Conditions</p>
-            </div>
-
-            <p>Built with depth, for what&apos;s next.</p>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
@@ -660,7 +578,7 @@ function WorkCard({
 }) {
   return (
     <article>
-      <div className="relative h-[245px] overflow-hidden rounded-[18px] bg-[#f2f0f7]">
+      <div className="relative h-61.25 overflow-hidden rounded-[18px] bg-[#f2f0f7]">
         {variant === "charity" && (
           <div className="absolute inset-5 rotate-[-5deg] rounded-xl bg-white p-4 shadow-lg">
             <div className="h-full rounded-lg bg-linear-to-br from-[#111225] via-[#ef8676] to-[#f5ddd9] p-5">
@@ -758,12 +676,12 @@ function Testimonial({
 }) {
   return (
     <article className="relative rounded-[18px] border border-[#efedf4] bg-white p-8 shadow-[0_15px_45px_rgba(38,34,81,.05)]">
-      <p className="max-w-[470px] text-[17px] leading-6 text-[#555269]">
+      <p className="max-w-117.5 text-[17px] leading-6 text-[#555269]">
         “{quote}”
       </p>
 
       <div className="mt-8 flex items-center gap-3">
-        <div className="h-12 w-12 rounded-full bg-gradient-to-br from-[#d9d5c9] to-[#767078]" />
+        <div className="h-12 w-12 rounded-full bg-linear-to-br from-[#d9d5c9] to-[#767078]" />
 
         <div>
           <p className="text-[12px] font-bold">{name}</p>
@@ -771,7 +689,7 @@ function Testimonial({
         </div>
       </div>
 
-      <span className="absolute bottom-4 right-7 text-[70px] font-black leading-none text-[#f1efff]">
+      <span className="absolute bottom-4 right-7 text-17.5 font-black leading-none text-[#f1efff]">
         ”
       </span>
     </article>
