@@ -53,21 +53,21 @@ const ContactSection = () => {
                 <ContactItem
                   icon={MessageCircleMore}
                   title="WhatsApp"
-                  value="+880 1700 000000"
+                  value="+1 (646) 731-4797"
                   text="Message us anytime."
                 />
 
                 <ContactItem
                   icon={MapPin}
                   title="Location"
-                  value="Bangladesh (Remote Worldwide)"
+                  value="148-28 88th Avenue, Apt# 6H, Queens, NY-11435"
                   text="We work with clients globally."
                 />
 
                 <ContactItem
                   icon={Clock3}
                   title="Working Hours"
-                  value="Sun – Thu: 9:00 AM – 6:00 PM (BST)"
+                  value="24/7"
                   text="We're online during business hours."
                 />
               </div>
