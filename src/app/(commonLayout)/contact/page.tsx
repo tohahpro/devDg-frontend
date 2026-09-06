@@ -59,7 +59,7 @@ export default function ContactPage() {
 
                         {/* RIGHT VISUAL */}
                         <div className="relative self-end lg:col-span-7">
-                            <div className="relative aspect-16/7 w-full">
+                            <div className="relative aspect-16/7 w-full lg:translate-y-8">
                                 <Image
                                     src={ContactHero}
                                     alt="Let's make it happen"

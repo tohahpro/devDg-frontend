@@ -152,8 +152,21 @@ export default function HomePage() {
           </div>
 
           {/* Hero visual */}
-          <div className="relative mx-auto h-125 w-full max-w-165">
-            <div className="absolute left-[11%] top-20 h-82.5 w-110 -rotate-2 rounded-[20px] border border-white/60 bg-white p-5 shadow-[0_30px_60px_rgba(63,51,140,.16)]">
+          <div className="group relative mx-auto h-125 w-full max-w-165 transition-transform duration-700 ease-out hover:scale-[1.01]">
+
+            {/* Main Browser Card */}
+            <div
+              className="
+      absolute left-[11%] top-20 h-82.5 w-110 -rotate-2
+      rounded-[20px] border border-white/60 bg-white p-5
+      shadow-[0_30px_60px_rgba(63,51,140,.16)]
+      transition-all duration-700 ease-out
+      group-hover:-translate-x-2
+      group-hover:-translate-y-2
+      group-hover:-rotate-3
+      group-hover:shadow-[0_40px_80px_rgba(63,51,140,.22)]
+    "
+            >
               <div className="mb-6 flex gap-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ff756f]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ffcf55]" />
@@ -172,6 +185,7 @@ export default function HomePage() {
                     <span className="rounded-md bg-[#ed796b] px-4 py-2 text-[10px] font-bold text-white">
                       Get Started
                     </span>
+
                     <span className="rounded-md bg-[#f7f6fa] px-4 py-2 text-[10px] font-semibold">
                       Learn More
                     </span>
@@ -184,13 +198,29 @@ export default function HomePage() {
               <div className="mt-8 h-18.75 rounded-xl bg-linear-to-r from-[#f5f3fb] to-[#ece9ff]" />
             </div>
 
-            <div className="absolute right-[5%] top-17.5 z-20 rounded-2xl bg-white px-5 py-4 shadow-[0_20px_45px_rgba(47,37,100,.16)]">
+            {/* Google Search Card */}
+            <div
+              className="
+      absolute right-[5%] top-17.5 z-20
+      rounded-2xl bg-white px-5 py-4
+      shadow-[0_20px_45px_rgba(47,37,100,.16)]
+      transition-all duration-500 ease-out
+      group-hover:translate-x-2
+      group-hover:-translate-y-3
+      group-hover:rotate-1
+      group-hover:shadow-[0_28px_60px_rgba(47,37,100,.22)]
+    "
+            >
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow">
                   <span className="text-lg font-black text-[#4285f4]">G</span>
                 </div>
+
                 <div>
-                  <p className="text-[10px] text-[#86839a]">Search</p>
+                  <p className="text-[10px] text-[#86839a]">
+                    Search
+                  </p>
+
                   <p className="text-[12px] font-extrabold text-[#29284d]">
                     Your brand on top
                   </p>
@@ -198,44 +228,117 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="absolute bottom-16.25 left-[1%] z-30 flex items-end gap-3 rounded-2xl bg-white px-5 py-4 shadow-[0_20px_50px_rgba(56,48,112,.16)]">
+            {/* Organic Traffic Card */}
+            <div
+              className="
+      absolute bottom-16.25 left-[1%] z-30
+      flex items-end gap-3
+      rounded-2xl bg-white px-5 py-4
+      shadow-[0_20px_50px_rgba(56,48,112,.16)]
+      transition-all duration-700 ease-out
+      group-hover:-translate-x-2
+      group-hover:translate-y-2
+      group-hover:-rotate-1
+      group-hover:shadow-[0_28px_60px_rgba(56,48,112,.22)]
+    "
+            >
               <div className="flex h-12 items-end gap-1">
-                {[18, 27, 35, 45, 58].map((h) => (
+                {[18, 27, 35, 45, 58].map((h, index) => (
                   <span
                     key={h}
-                    className="w-1.75 rounded-sm bg-[#735eff]"
-                    style={{ height: h }}
+                    className="
+            w-1.75 rounded-sm bg-[#735eff]
+            transition-all duration-500
+            group-hover:scale-y-110
+          "
+                    style={{
+                      height: h,
+                      transitionDelay: `${index * 50}ms`,
+                    }}
                   />
                 ))}
               </div>
+
               <div>
                 <p className="text-[22px] font-black text-[#22214d]">
                   +128%
                 </p>
+
                 <p className="text-[10px] text-[#7a7890]">
                   Organic Traffic
                 </p>
               </div>
             </div>
 
-            <div className="absolute bottom-2.5 right-[14%] z-40 h-70 w-36.25 rotate-[4deg] rounded-[30px] border-[6px] border-[#111827] bg-white p-2 shadow-[0_25px_50px_rgba(33,29,74,.22)]">
+            {/* Phone */}
+            <div
+              className="
+      absolute bottom-2.5 right-[14%] z-40
+      h-70 w-36.25 rotate-[4deg]
+      rounded-[30px]
+      border-[6px] border-[#111827]
+      bg-white p-2
+      shadow-[0_25px_50px_rgba(33,29,74,.22)]
+      transition-all duration-700 ease-out
+      group-hover:translate-x-2
+      group-hover:-translate-y-4
+      group-hover:rotate-[7deg]
+      group-hover:scale-[1.03]
+      group-hover:shadow-[0_35px_70px_rgba(33,29,74,.28)]
+    "
+            >
               <div className="mx-auto mb-2 h-3 w-14 rounded-full bg-[#101217]" />
 
               <div className="rounded-[20px] bg-[#f8f7fb] p-3">
                 <p className="text-[6px] font-semibold text-[#88869a]">
                   Summer Collection
                 </p>
+
                 <div className="mt-3 h-30 rounded-xl bg-linear-to-b from-[#dedbf5] to-[#aaa3d3]" />
-                <p className="mt-3 text-[8px] font-bold">Performance Shoe</p>
-                <p className="text-[7px] text-[#7b7990]">$129.00</p>
+
+                <p className="mt-3 text-[8px] font-bold">
+                  Performance Shoe
+                </p>
+
+                <p className="text-[7px] text-[#7b7990]">
+                  $129.00
+                </p>
               </div>
             </div>
 
-            <div className="absolute right-[-3%] top-37.5 rotate-12 text-[#ef7969]">
-              <ArrowUpRight size={110} strokeWidth={5} />
+            {/* Arrow */}
+            <div
+              className="
+      absolute right-[-3%] top-37.5
+      rotate-12
+      text-[#ef7969]
+      transition-all duration-700 ease-out
+      group-hover:-translate-y-3
+      group-hover:translate-x-2
+      group-hover:rotate-[18deg]
+      group-hover:scale-110
+    "
+            >
+              <ArrowUpRight
+                size={110}
+                strokeWidth={5}
+              />
             </div>
 
-            <p className="absolute right-[0%] top-75 rotate-[-9deg] text-[25px] font-semibold italic text-[#443d8e]">
+            {/* Growth Text */}
+            <p
+              className="
+      absolute right-[0%] top-75
+      rotate-[-9deg]
+      text-[25px]
+      font-semibold italic
+      text-[#443d8e]
+      transition-all duration-700 ease-out
+      group-hover:-translate-y-2
+      group-hover:translate-x-1
+      group-hover:rotate-[-5deg]
+    "
+            >
               Growth
               <br />
               Starts Here

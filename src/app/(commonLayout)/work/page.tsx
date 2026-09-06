@@ -158,7 +158,7 @@ export default function WorkPage() {
 
                         {/* RIGHT VISUAL */}
                         <div className="relative self-end lg:col-span-7">
-                            <div className="relative aspect-16/7 w-full translate-y-4">
+                            <div className="relative aspect-16/7 w-full translate-y-5  lg:translate-y-8">
                                 <Image
                                     src={WorkHero}
                                     alt="Ideas into impact"
