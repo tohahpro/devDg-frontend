@@ -69,10 +69,6 @@ const ContactSection = () => {
                       {/* USA */}
                       <div className="group relative flex items-start justify-between gap-4 p-5 transition-all duration-300 hover:bg-white/70">
                         <div className="flex items-start gap-4">
-                          <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#111140] text-xs font-black tracking-wide text-white shadow-sm">
-                            US
-                          </div>
-
                           <div>
                             <div className="flex flex-wrap items-center gap-2">
                               <p className="text-sm font-black text-[#111140]">
@@ -100,10 +96,6 @@ const ContactSection = () => {
                       {/* Bangladesh */}
                       <div className="group relative flex items-start justify-between gap-4 p-5 transition-all duration-300 hover:bg-white/70">
                         <div className="flex items-start gap-4">
-                          <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-violet-600 text-xs font-black tracking-wide text-white shadow-sm">
-                            BD
-                          </div>
-
                           <div>
                             <div className="flex flex-wrap items-center gap-2">
                               <p className="text-sm font-black text-[#111140]">

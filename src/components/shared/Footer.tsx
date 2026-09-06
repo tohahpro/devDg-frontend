@@ -32,10 +32,9 @@ export default function Footer() {
             </p>
 
             <div className="mt-5 flex items-center gap-4">
-              <SocialLink href="#" icon={FaLinkedin} />
-              <SocialLink href="#" icon={FaFacebook} />
-              <SocialLink href="#" icon={FaInstagram} />
-              <SocialLink href="#" icon={FaYoutube} />
+              <SocialLink href="https://www.facebook.com/depthdigi" icon={FaLinkedin} />
+              <SocialLink href="https://www.facebook.com/depthdigi" icon={FaFacebook} />
+
             </div>
           </div>
 
@@ -114,9 +113,26 @@ export default function Footer() {
                 hello@depthdigi.com
               </a>
 
-              <div className="flex items-center gap-3">
-                <MapPin className="size-4 shrink-0 text-[#111140]" />
-                <span>Bangladesh (Remote Worldwide)</span>
+              <div className="space-y-3 text-sm text-slate-600">
+                <div className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-[#111140]" />
+
+                  <span className="leading-5">
+                    148-28 88th Avenue, Apt. 6H
+                    <br />
+                    Queens, NY 11435, USA
+                  </span>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-[#111140]" />
+
+                  <span className="leading-5">
+                    Board Bazar
+                    <br />
+                    Gaibandha, Bangladesh
+                  </span>
+                </div>
               </div>
             </div>
           </div>
